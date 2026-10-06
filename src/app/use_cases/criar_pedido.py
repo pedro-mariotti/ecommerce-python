@@ -1,5 +1,15 @@
-# from src.app.entities.pedido import Pedido
-# from src.app.entities.desconto import DescontoPremium, DescontoVIP, DescontoNormal
+from src.app.entities.pedido import Pedido
+from src.app.entities.desconto import DescontoPremium, DescontoVIP, DescontoNormal
 
-# class CriarPedido:
-#     def 
+class CriarPedido:
+    def executar(self, cliente: str, valor_original: float, tipo_desconto: str) -> Pedido:
+        if tipo_desconto.lower() == "normal":
+            desconto = DescontoNormal()
+        elif tipo_desconto.lower() == "vip":
+            desconto = DescontoVIP()
+        elif tipo_desconto.lower() == "premium":
+            desconto = DescontoPremium()
+        else:
+            raise ValueError("Tipo de desconto inválido")
+
+        return Pedido(cliente, valor_original, desconto)
