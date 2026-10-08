@@ -17,7 +17,7 @@ class CriarPedido:
         else:
             raise ValueError("Tipo de desconto inválido")
 
-        pedido = Pedido(cliente, desconto)
+        pedido = Pedido(cliente, valor_original, desconto)
         self.pedido_gateway.salvar(pedido)
 
         return pedido
