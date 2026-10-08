@@ -11,7 +11,7 @@ if __name__ == "__main__":
     repo = PedidoRepository(database)
     controller = PedidoController()
 
-    """Criando pedodps e aplicando descontos"""
+    """Criando pedidos e aplicando descontos"""
     pedido1 = Pedido("Cliente A", DescontoNormal())
     pedido1.valor_original = 100
 
